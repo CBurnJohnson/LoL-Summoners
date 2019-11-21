@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import SearchBar from './components/layout/SearchBar';
+import SearchBar from './components/summoner/SearchBar';
 import Summoner from './components/summoner/Summoner';
 
 function App() {
