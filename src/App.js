@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
 
+import SearchBar from './components/layout/SearchBar';
+import Summoner from './components/summoner/Summoner';
+
 function App() {
     return (
         <div className='App'>
-            <div>
-                <h1>hello</h1>
+            <div className='container'>
+                <h1>LoL Summoners</h1>
+                <SearchBar />
+                <Summoner />
             </div>
         </div>
     );
