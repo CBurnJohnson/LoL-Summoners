@@ -4,15 +4,19 @@ import './App.css';
 import SearchBar from './components/summoner/SearchBar';
 import Summoner from './components/summoner/Summoner';
 
+import SummonerState from './context/summoner/SummonerState';
+
 function App() {
     return (
-        <div className='App'>
-            <div className='container'>
-                <h1>LoL Summoners</h1>
-                <SearchBar />
-                <Summoner />
+        <SummonerState>
+            <div className='App'>
+                <div className='container'>
+                    <h1>LoL Summoners</h1>
+                    <SearchBar />
+                    <Summoner />
+                </div>
             </div>
-        </div>
+        </SummonerState>
     );
 }
 
