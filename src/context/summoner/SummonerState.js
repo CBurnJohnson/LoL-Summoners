@@ -1,8 +1,9 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
+
 import SummonerContext from './summonerContext';
 import SummonerReducer from './summonerReducer';
-import { GET_SUMMONER_DATA, SET_LOADING } from '../types';
+import { GET_SUMMONER_DATA, SET_LOADING, CLEAR_SUMMONER } from '../types';
 
 const SummonerState = props => {
     const initialState = {
@@ -33,6 +34,9 @@ const SummonerState = props => {
         });
     };
 
+    // Clears existing summoner component data
+    const clearSummoner = () => dispatch({ type: CLEAR_SUMMONER });
+
     // Set Loading
     const setLoading = () => dispatch({ type: SET_LOADING });
 
@@ -43,7 +47,8 @@ const SummonerState = props => {
                 summonerDetails: state.summonerDetails,
                 loading: state.loading,
                 getSummonerData,
-                setLoading
+                setLoading,
+                clearSummoner
             }}
         >
             {props.children}

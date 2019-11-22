@@ -1,3 +1,3 @@
 export const GET_SUMMONER_DATA = 'GET_SUMMONER_DATA';
 export const SET_LOADING = 'SET_LOADING';
-export const GET_SUMMONER_ID = 'GET_SUMMONER_ID';
+export const CLEAR_SUMMONER = 'CLEAR_SUMMONER';

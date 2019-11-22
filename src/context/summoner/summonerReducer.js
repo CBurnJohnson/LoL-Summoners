@@ -1,4 +1,4 @@
-import { GET_SUMMONER_DATA, SET_LOADING } from '../types';
+import { GET_SUMMONER_DATA, SET_LOADING, CLEAR_SUMMONER } from '../types';
 
 export default (state, action) => {
     switch (action.type) {
@@ -13,6 +13,13 @@ export default (state, action) => {
             return {
                 ...state,
                 loading: true
+            };
+        case CLEAR_SUMMONER:
+            return {
+                ...state,
+                summonerName: '',
+                summonerDetails: [],
+                loading: false
             };
 
         default:

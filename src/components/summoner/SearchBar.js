@@ -2,14 +2,18 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SummonerContext from '../../context/summoner/summonerContext';
 
+import Home from '../pages/Home';
+
 const SearchBar = () => {
     const summonerContext = useContext(SummonerContext);
 
-    const { getSummonerData } = summonerContext;
+    const { getSummonerData, clearSummoner, setLoading } = summonerContext;
 
     const [inputValue, setInputValue] = useState('');
 
     const handleOnSubmit = e => {
+        clearSummoner();
+        setLoading();
         getSummonerData(inputValue);
     };
 
