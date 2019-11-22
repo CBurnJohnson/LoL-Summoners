@@ -2,29 +2,38 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import SummonerContext from './summonerContext';
 import SummonerReducer from './summonerReducer';
-import { GET_USER, SET_LOADING } from '../types';
+import { GET_SUMMONER_DATA, SET_LOADING, GET_SUMMONER_ID } from '../types';
 
 const SummonerState = props => {
     const initialState = {
         summonerDetails: [],
+        summonerId: '',
         loading: false
     };
 
+    const apiKey = 'RGAPI-09f0a32d-8916-4190-a5eb-868c977d3e10';
+
     const [state, dispatch] = useReducer(SummonerReducer, initialState);
 
-    // Get User
-    const getUser = async () => {
-        setLoading();
-        console.log('this works');
-
+    // Get Summoner ID
+    const getSummonerId = async inputValue => {
         const res = await axios.get(
-            `https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/MUrluR-1UwoH30rhN7nkB3vWzwfLHcx9oyLJgryUrIZeRO4?api_key=RGAPI-1f4ed270-37f2-4862-9885-38e1011aa067`
+            `https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${inputValue}?api_key=${apiKey}`
+        );
+
+        const resTwo = await axios.get(
+            `https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${res.data.id}?api_key=${apiKey}`
         );
 
         dispatch({
-            type: GET_USER,
-            payload: res.data
+            type: GET_SUMMONER_DATA,
+            payload: resTwo.data
         });
+    };
+
+    // Get Summoner Data
+    const getSummonerData = async () => {
+        setLoading();
     };
 
     // Set Loading
@@ -35,7 +44,9 @@ const SummonerState = props => {
             value={{
                 summonerDetails: state.summonerDetails,
                 loading: state.loading,
-                getUser
+                summonerId: state.summonerId,
+                getSummonerId,
+                getSummonerData
             }}
         >
             {props.children}

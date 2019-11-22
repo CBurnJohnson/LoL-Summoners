@@ -1,12 +1,11 @@
 import React from 'react';
 
 const SummonerItem = props => {
-    const { summonerName, queueType } = props.detail;
+    const { summonerName, queueType, rank, tier } = props.detail;
 
     return (
         <div>
-            {summonerName}
-            {queueType}
+            {summonerName} {queueType} {rank} {tier}{' '}
         </div>
     );
 };
