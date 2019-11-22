@@ -10,8 +10,6 @@ const SearchBar = () => {
     const [inputValue, setInputValue] = useState('');
 
     const handleOnSubmit = e => {
-        e.preventDefault();
-
         getSummonerData(inputValue);
     };
 
@@ -21,14 +19,19 @@ const SearchBar = () => {
 
     return (
         <div>
-            <input
-                type='text'
-                placeholder='Search for Summoner...'
-                onChange={handleOnChange}
-            />
-            <button type='submit' onClick={handleOnSubmit}>
-                <Link to='/summoner'>Search</Link>
-            </button>
+            <form>
+                <input
+                    type='text'
+                    placeholder='Summoner name...'
+                    onChange={handleOnChange}
+                />
+
+                <Link to='/summoner'>
+                    <button type='submit' onClick={handleOnSubmit}>
+                        Search
+                    </button>
+                </Link>
+            </form>
         </div>
     );
 };

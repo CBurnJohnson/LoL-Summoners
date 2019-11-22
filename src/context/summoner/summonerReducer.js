@@ -1,4 +1,4 @@
-import { GET_SUMMONER_DATA, SET_LOADING, GET_SUMMONER_ID } from '../types';
+import { GET_SUMMONER_DATA, SET_LOADING } from '../types';
 
 export default (state, action) => {
     switch (action.type) {
