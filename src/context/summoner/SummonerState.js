@@ -2,12 +2,11 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import SummonerContext from './summonerContext';
 import SummonerReducer from './summonerReducer';
-import { GET_SUMMONER_DATA, SET_LOADING, GET_SUMMONER_ID } from '../types';
+import { GET_SUMMONER_DATA, SET_LOADING } from '../types';
 
 const SummonerState = props => {
     const initialState = {
         summonerDetails: [],
-        summonerId: '',
         loading: false
     };
 
@@ -15,12 +14,14 @@ const SummonerState = props => {
 
     const [state, dispatch] = useReducer(SummonerReducer, initialState);
 
-    // Get Summoner ID
-    const getSummonerId = async inputValue => {
+    // Get Summoner Data
+    const getSummonerData = async inputValue => {
+        // Getting summonerId based on the username that is searched for
         const res = await axios.get(
             `https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${inputValue}?api_key=${apiKey}`
         );
 
+        // Retrieves summoner Data
         const resTwo = await axios.get(
             `https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${res.data.id}?api_key=${apiKey}`
         );
@@ -29,11 +30,6 @@ const SummonerState = props => {
             type: GET_SUMMONER_DATA,
             payload: resTwo.data
         });
-    };
-
-    // Get Summoner Data
-    const getSummonerData = async () => {
-        setLoading();
     };
 
     // Set Loading
@@ -45,7 +41,6 @@ const SummonerState = props => {
                 summonerDetails: state.summonerDetails,
                 loading: state.loading,
                 summonerId: state.summonerId,
-                getSummonerId,
                 getSummonerData
             }}
         >

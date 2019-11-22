@@ -1,19 +1,17 @@
 import React, { useContext, useState } from 'react';
 import SummonerContext from '../../context/summoner/summonerContext';
 
-import axios from 'axios';
-
 const SearchBar = () => {
     const summonerContext = useContext(SummonerContext);
 
-    const { getSummonerData, getSummonerId } = summonerContext;
+    const { getSummonerData } = summonerContext;
 
     const [inputValue, setInputValue] = useState('');
 
     const handleOnSubmit = e => {
         e.preventDefault();
 
-        getSummonerId(inputValue);
+        getSummonerData(inputValue);
     };
 
     const handleOnChange = e => {
