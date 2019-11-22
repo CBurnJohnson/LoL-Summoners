@@ -6,6 +6,7 @@ import { GET_SUMMONER_DATA, SET_LOADING } from '../types';
 
 const SummonerState = props => {
     const initialState = {
+        summonerName: '',
         summonerDetails: [],
         loading: false
     };
@@ -38,10 +39,11 @@ const SummonerState = props => {
     return (
         <SummonerContext.Provider
             value={{
+                summonerName: state.summonerName,
                 summonerDetails: state.summonerDetails,
                 loading: state.loading,
-                summonerId: state.summonerId,
-                getSummonerData
+                getSummonerData,
+                setLoading
             }}
         >
             {props.children}
