@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import SummonerContext from '../../context/summoner/summonerContext';
 
 const SearchBar = () => {
@@ -26,7 +27,7 @@ const SearchBar = () => {
                 onChange={handleOnChange}
             />
             <button type='submit' onClick={handleOnSubmit}>
-                Search
+                <Link to='/summoner'>Search</Link>
             </button>
         </div>
     );
