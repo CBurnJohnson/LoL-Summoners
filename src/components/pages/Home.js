@@ -3,10 +3,13 @@ import SearchBar from '../summoner/SearchBar';
 
 const Home = () => {
     return (
-        <>
-            <h1>LoL Summoners</h1>
+        <div className='homepage-container'>
+            <h1>
+                League of Legends <br />{' '}
+                <span className='highlight'>Summoners</span>
+            </h1>
             <SearchBar />
-        </>
+        </div>
     );
 };
 

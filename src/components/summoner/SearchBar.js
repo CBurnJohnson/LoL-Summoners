@@ -20,17 +20,22 @@ const SearchBar = () => {
     };
 
     return (
-        <div>
+        <div className='form-container'>
             <form>
                 <input
                     type='text'
                     placeholder='Summoner name...'
                     onChange={handleOnChange}
+                    className='form-input'
                 />
 
                 <Link to='/summoner'>
-                    <button type='submit' onClick={handleOnSubmit}>
-                        Search
+                    <button
+                        type='submit'
+                        onClick={handleOnSubmit}
+                        className='form-btn'
+                    >
+                        &#8594;
                     </button>
                 </Link>
             </form>
