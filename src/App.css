@@ -88,3 +88,7 @@ body {
 .form-btn:hover {
     background: transparent;
 }
+
+.form-btn:focus {
+    outline: none;
+}
