@@ -18,20 +18,26 @@ const SummonerState = props => {
 
     // Get Summoner Data
     const getSummonerData = async inputValue => {
-        // Getting summonerId based on the username that is searched for
-        const res = await axios.get(
-            `https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${inputValue}?api_key=${apiKey}`
-        );
+        try {
+            // Getting summonerId based on the username that is searched for
+            const res = await axios.get(
+                `https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${inputValue}?api_key=${apiKey}`
+            );
 
-        // Retrieves summoner Data
-        const resTwo = await axios.get(
-            `https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${res.data.id}?api_key=${apiKey}`
-        );
+            // Retrieves summoner Data
+            const resTwo = await axios.get(
+                `https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${res.data.id}?api_key=${apiKey}`
+            );
 
-        dispatch({
-            type: GET_SUMMONER_DATA,
-            payload: resTwo.data
-        });
+            if (resTwo !== '') {
+                dispatch({
+                    type: GET_SUMMONER_DATA,
+                    payload: resTwo.data
+                });
+            }
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     // Clears existing summoner component data
