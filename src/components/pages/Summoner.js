@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import SummonerContext from '../../context/summoner/summonerContext';
 import SummonerItem from '../summoner/SummonerItem';
-
+import Spinner from '../layout/Spinner';
 import SearchBar from '../summoner/SearchBar';
 
 const Summoner = () => {
@@ -9,23 +9,24 @@ const Summoner = () => {
 
     const { summonerDetails, summonerName, loading } = summonerContext;
 
-    if (loading)
+    if (loading) {
         return (
             <>
                 <SearchBar />
-                <p>Loading...</p>
+                <Spinner />
             </>
         );
-
-    return (
-        <>
-            <SearchBar />
-            {summonerName}
-            {summonerDetails.map(detail => (
-                <SummonerItem key={detail.queueType} detail={detail} />
-            ))}
-        </>
-    );
+    } else {
+        return (
+            <>
+                <SearchBar />
+                {summonerName}
+                {summonerDetails.map(detail => (
+                    <SummonerItem key={detail.queueType} detail={detail} />
+                ))}
+            </>
+        );
+    }
 };
 
 export default Summoner;
