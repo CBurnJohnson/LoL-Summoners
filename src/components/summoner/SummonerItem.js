@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SummonerItem = props => {
-    const { queueType, rank, tier } = props.detail;
+    const { queueType, rank, tier } = props.queue;
 
     return (
         <div>

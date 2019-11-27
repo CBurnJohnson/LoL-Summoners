@@ -6,7 +6,7 @@ export default (state, action) => {
             return {
                 ...state,
                 summonerName: action.payload[0].summonerName,
-                summonerDetails: action.payload,
+                summonerQueues: action.payload,
                 loading: false
             };
         case SET_LOADING:
@@ -18,7 +18,7 @@ export default (state, action) => {
             return {
                 ...state,
                 summonerName: '',
-                summonerDetails: [],
+                summonerQueues: [],
                 loading: false
             };
 

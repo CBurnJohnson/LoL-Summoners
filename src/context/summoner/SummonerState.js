@@ -8,11 +8,11 @@ import { GET_SUMMONER_DATA, SET_LOADING, CLEAR_SUMMONER } from '../types';
 const SummonerState = props => {
     const initialState = {
         summonerName: '',
-        summonerDetails: [],
+        summonerQueues: [],
         loading: false
     };
 
-    const apiKey = 'RGAPI-09f0a32d-8916-4190-a5eb-868c977d3e10';
+    const apiKey = 'RGAPI-8ffe8eda-1e91-48c4-b2c3-b4f6392c3c35';
 
     const [state, dispatch] = useReducer(SummonerReducer, initialState);
 
@@ -50,7 +50,7 @@ const SummonerState = props => {
         <SummonerContext.Provider
             value={{
                 summonerName: state.summonerName,
-                summonerDetails: state.summonerDetails,
+                summonerQueues: state.summonerQueues,
                 loading: state.loading,
                 getSummonerData,
                 setLoading,
