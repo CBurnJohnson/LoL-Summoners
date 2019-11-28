@@ -22,7 +22,7 @@ const SummonerState = props => {
     const [state, dispatch] = useReducer(SummonerReducer, initialState);
 
     // Get Summoner Data
-    const getSummonerQueues = async inputValue => {
+    const getSummonerData = async inputValue => {
         try {
             // Getting summonerId based on the username that is searched for
             const res = await axios.get(
@@ -33,6 +33,13 @@ const SummonerState = props => {
             const resTwo = await axios.get(
                 `https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${res.data.id}?api_key=${apiKey}`
             );
+
+            // Retrieves summoner match history
+            const resThree = await axios.get(
+                `https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${res.data.accountId}?endIndex=10&api_key=${apiKey}`
+            );
+
+            console.log(resThree);
 
             if (resTwo !== '') {
                 dispatch({
@@ -61,7 +68,7 @@ const SummonerState = props => {
                 summonerDetails: state.summonerDetails,
                 summonerQueues: state.summonerQueues,
                 loading: state.loading,
-                getSummonerQueues,
+                getSummonerData,
                 setLoading,
                 clearSummoner
             }}
