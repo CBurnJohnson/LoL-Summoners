@@ -7,17 +7,19 @@ import {
     SET_SUMMONER_DETAILS,
     SET_SUMMONER_QUEUES,
     SET_LOADING,
-    CLEAR_SUMMONER
+    CLEAR_SUMMONER,
+    SET_SUMMONER_MATCHES
 } from '../types';
 
 const SummonerState = props => {
     const initialState = {
         summonerDetails: {},
         summonerQueues: [],
+        summonerMatches: [],
         loading: false
     };
 
-    const apiKey = 'RGAPI-8ffe8eda-1e91-48c4-b2c3-b4f6392c3c35';
+    const apiKey = 'RGAPI-16df29be-6a11-4830-a875-544356cd3a92';
 
     const [state, dispatch] = useReducer(SummonerReducer, initialState);
 
@@ -39,7 +41,31 @@ const SummonerState = props => {
                 `https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${res.data.accountId}?endIndex=10&api_key=${apiKey}`
             );
 
-            console.log(resThree);
+            const { matches } = resThree.data;
+
+            const gameIds = [
+                matches[0].gameId,
+                matches[1].gameId,
+                matches[2].gameId,
+                matches[3].gameId,
+                matches[4].gameId,
+                matches[5].gameId,
+                matches[6].gameId,
+                matches[7].gameId,
+                matches[8].gameId,
+                matches[9].gameId
+            ];
+
+            // Retrieves the information about the past 10 games
+            for (let i = 0; i < gameIds.length; i++) {
+                const res = await axios.get(
+                    `https://na1.api.riotgames.com/lol/match/v4/matches/${gameIds[i]}?api_key=${apiKey}`
+                );
+                dispatch({
+                    type: SET_SUMMONER_MATCHES,
+                    payload: res.data
+                });
+            }
 
             if (resTwo !== '') {
                 dispatch({
@@ -67,6 +93,7 @@ const SummonerState = props => {
             value={{
                 summonerDetails: state.summonerDetails,
                 summonerQueues: state.summonerQueues,
+                summonerMatches: state.summonerMatches,
                 loading: state.loading,
                 getSummonerData,
                 setLoading,
