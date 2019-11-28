@@ -5,7 +5,8 @@ const Home = () => {
     return (
         <div className='homepage-container'>
             <h1>
-                League of Legends <br />{' '}
+                <span className='highlight'>L</span>eague of{' '}
+                <span className='highlight'>L</span>egends <br />{' '}
                 <span className='highlight'>Summoners</span>
             </h1>
             <SearchBar />
