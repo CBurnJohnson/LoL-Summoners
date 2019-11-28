@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 * {
     margin: 0;
@@ -8,6 +8,7 @@
 
 body {
     background: #003366;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* =============================================================
@@ -36,7 +37,6 @@ body {
 }
 
 .homepage-container h1 {
-    font-family: 'Baloo Bhai';
     font-size: 5rem;
     color: white;
     margin-bottom: 1em;
@@ -96,3 +96,56 @@ body {
 /* ===============================================================
     Summoner Page
 ================================================================== */
+
+.summoner-container {
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 1em;
+    margin: 1em auto;
+    width: 96%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'summonerDetails solo tft'
+        'summonerDetails flexQ threes ';
+}
+
+.summoner-details {
+    justify-self: left;
+}
+
+.summoner-name {
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.summoner-level {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 1.5rem;
+}
+
+.ranked_tft {
+    grid-area: tft;
+}
+
+.ranked_solo_5x5 {
+    grid-area: solo;
+}
+
+.ranked_flex_tt {
+    grid-area: threes;
+}
+
+.ranked_flex_sr {
+    grid-area: flexQ;
+}
+
+.queue-type {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}

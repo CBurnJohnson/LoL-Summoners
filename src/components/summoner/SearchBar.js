@@ -5,14 +5,14 @@ import SummonerContext from '../../context/summoner/summonerContext';
 const SearchBar = () => {
     const summonerContext = useContext(SummonerContext);
 
-    const { getSummonerData, clearSummoner, setLoading } = summonerContext;
+    const { getSummonerQueues, clearSummoner, setLoading } = summonerContext;
 
     const [inputValue, setInputValue] = useState('');
 
     const handleOnSubmit = e => {
         clearSummoner();
         setLoading();
-        getSummonerData(inputValue);
+        getSummonerQueues(inputValue);
     };
 
     const handleOnChange = e => {

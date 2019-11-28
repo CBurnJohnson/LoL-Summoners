@@ -7,7 +7,7 @@ import SearchBar from '../summoner/SearchBar';
 const Summoner = () => {
     const summonerContext = useContext(SummonerContext);
 
-    const { summonerQueues, summonerName, loading } = summonerContext;
+    const { summonerQueues, summonerDetails, loading } = summonerContext;
 
     if (loading) {
         return (
@@ -20,10 +20,20 @@ const Summoner = () => {
         return (
             <>
                 <SearchBar />
-                <h2 className='summoner-title'>{summonerName}</h2>
-                {summonerQueues.map(queue => (
-                    <SummonerItem key={queue.queueType} queue={queue} />
-                ))}
+                <div className='summoner-container'>
+                    <div className='summoner-details'>
+                        <span className='summoner-name'>
+                            {summonerDetails.name}
+                        </span>{' '}
+                        <br />{' '}
+                        <span className='summoner-level'>
+                            Level {summonerDetails.summonerLevel}
+                        </span>
+                    </div>
+                    {summonerQueues.map(queue => (
+                        <SummonerItem key={queue.queueType} queue={queue} />
+                    ))}
+                </div>
             </>
         );
     }

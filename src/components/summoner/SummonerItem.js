@@ -1,11 +1,12 @@
 import React from 'react';
 
 const SummonerItem = props => {
-    const { queueType, rank, tier } = props.queue;
+    const { queueType, rank, tier, leaguePoints } = props.queue;
 
     return (
-        <div>
-            {queueType} {rank} {tier}{' '}
+        <div className={queueType.toLowerCase()}>
+            <div className='queue-type'>{queueType} </div>
+            {tier} {rank} {leaguePoints} LP
         </div>
     );
 };

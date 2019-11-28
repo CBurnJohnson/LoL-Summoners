@@ -1,11 +1,20 @@
-import { GET_SUMMONER_DATA, SET_LOADING, CLEAR_SUMMONER } from '../types';
+import {
+    SET_SUMMONER_QUEUES,
+    SET_LOADING,
+    CLEAR_SUMMONER,
+    SET_SUMMONER_DETAILS
+} from '../types';
 
 export default (state, action) => {
     switch (action.type) {
-        case GET_SUMMONER_DATA:
+        case SET_SUMMONER_DETAILS:
             return {
                 ...state,
-                summonerName: action.payload[0].summonerName,
+                summonerDetails: action.payload
+            };
+        case SET_SUMMONER_QUEUES:
+            return {
+                ...state,
                 summonerQueues: action.payload,
                 loading: false
             };
@@ -17,7 +26,7 @@ export default (state, action) => {
         case CLEAR_SUMMONER:
             return {
                 ...state,
-                summonerName: '',
+                summonerDetails: {},
                 summonerQueues: [],
                 loading: false
             };
