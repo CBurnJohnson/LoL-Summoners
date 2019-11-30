@@ -3,11 +3,17 @@ import SummonerContext from '../../context/summoner/summonerContext';
 import SummonerItem from '../summoner/SummonerItem';
 import Spinner from '../layout/Spinner';
 import SearchBar from '../summoner/SearchBar';
+import Match from '../summoner/Match';
 
 const Summoner = () => {
     const summonerContext = useContext(SummonerContext);
 
-    const { summonerQueues, summonerDetails, loading } = summonerContext;
+    const {
+        summonerQueues,
+        summonerDetails,
+        summonerMatches,
+        loading
+    } = summonerContext;
 
     if (loading) {
         return (
@@ -32,6 +38,12 @@ const Summoner = () => {
                     </div>
                     {summonerQueues.map(queue => (
                         <SummonerItem key={queue.queueType} queue={queue} />
+                    ))}
+                </div>
+                <h1>Match History</h1>
+                <div className='matches-container'>
+                    {summonerMatches.map(match => (
+                        <Match key={match.gameId} match={match} />
                     ))}
                 </div>
             </>

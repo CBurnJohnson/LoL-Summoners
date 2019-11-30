@@ -19,14 +19,14 @@ const SummonerState = props => {
         loading: false
     };
 
-    const apiKey = 'RGAPI-16df29be-6a11-4830-a875-544356cd3a92';
+    const apiKey = 'RGAPI-5dbe2ef7-8f86-4e9d-8d0a-1e9d7e3d2f18';
 
     const [state, dispatch] = useReducer(SummonerReducer, initialState);
 
-    // Get Summoner Data
+    // Get Summoner Data from riot apis
     const getSummonerData = async inputValue => {
         try {
-            // Getting summonerId based on the username that is searched for
+            // Gets summonerId based on the username that is searched for
             const res = await axios.get(
                 `https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${inputValue}?api_key=${apiKey}`
             );
