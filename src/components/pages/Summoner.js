@@ -40,7 +40,7 @@ const Summoner = () => {
                         <SummonerItem key={queue.queueType} queue={queue} />
                     ))}
                 </div>
-                <h1>Match History</h1>
+                <h1 className='match-history'>Match History</h1>
                 <div className='matches-container'>
                     {summonerMatches.map(match => (
                         <Match key={match.gameId} match={match} />

@@ -61,12 +61,21 @@ const Match = props => {
     });
 
     return (
-        <div className='match-item'>
+        <div
+            className='match-item'
+            style={
+                didWin
+                    ? { backgroundColor: '#90ee90' }
+                    : { backgroundColor: '#E2B6B3' }
+            }
+        >
             <div className='match-info'>
                 <div className='info'>
                     <div className='game-type'>{gameType}</div>
                     <div className='game-mode'>{gameMode}</div>
-                    <div className='game-duration'>{gameDuration / 60}</div>
+                    <div className='game-duration'>
+                        {parseFloat(gameDuration / 60).toFixed(2)} mins
+                    </div>
                 </div>
                 <div className='outcome'>
                     <div>{didWin ? 'Victory!' : 'Defeat!'} </div>
