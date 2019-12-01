@@ -149,3 +149,36 @@ body {
     font-size: 1.5rem;
     margin-bottom: 1em;
 }
+
+/* ===============================================
+    Match History
+====================================================== */
+
+.matches-container {
+    display: grid;
+    background-color: red;
+    grid-gap: 1em;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 1em;
+    margin: 1em auto;
+    width: 96%;
+    height: 55%;
+    overflow: auto;
+}
+
+.match-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.match-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.players {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
