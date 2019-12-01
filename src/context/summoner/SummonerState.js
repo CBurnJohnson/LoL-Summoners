@@ -19,7 +19,7 @@ const SummonerState = props => {
         loading: false
     };
 
-    const apiKey = 'RGAPI-5dbe2ef7-8f86-4e9d-8d0a-1e9d7e3d2f18';
+    const apiKey = 'RGAPI-90aed9d7-d284-4dba-bb12-041f6b271881';
 
     const [state, dispatch] = useReducer(SummonerReducer, initialState);
 

@@ -201,6 +201,10 @@ body {
     grid-template-columns: 1fr 1fr;
 }
 
+.match-player {
+    font-weight: bold;
+}
+
 .info * {
     margin: 0.5em;
 }

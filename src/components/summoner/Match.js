@@ -83,14 +83,28 @@ const Match = props => {
                 <div className='left-team'>
                     {leftTeam.map(player => (
                         <div key={player.player.summonerName}>
-                            {player.player.summonerName}
+                            {player.player.summonerName ===
+                            summonerDetails.name ? (
+                                <span className='match-player'>
+                                    {player.player.summonerName}{' '}
+                                </span>
+                            ) : (
+                                <span>{player.player.summonerName}</span>
+                            )}
                         </div>
                     ))}
                 </div>
                 <div className='right-team'>
                     {rightTeam.map(player => (
                         <div key={player.player.summonerName}>
-                            {player.player.summonerName}
+                            {player.player.summonerName ===
+                            summonerDetails.name ? (
+                                <span className='match-player'>
+                                    {player.player.summonerName}{' '}
+                                </span>
+                            ) : (
+                                <span>{player.player.summonerName}</span>
+                            )}
                         </div>
                     ))}
                 </div>
