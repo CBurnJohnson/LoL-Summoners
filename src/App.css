@@ -215,3 +215,29 @@ body {
     font-family: 'Kalam', cursive;
     font-weight: 200;
 }
+
+/* =====================================================================
+    Media Queries
+=================================================================== */
+
+@media (max-width: 650px) {
+    .summoner-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'solo'
+            'flexQ'
+            'threes'
+            'tft';
+    }
+
+    .summoner-details {
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .summoner-icon {
+        justify-self: center;
+        align-self: center;
+    }
+}
