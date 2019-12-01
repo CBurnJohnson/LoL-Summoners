@@ -50,8 +50,6 @@ const Match = props => {
         didWin = false;
     }
 
-    console.log(playerTeam);
-
     const leftTeam = participantIdentities.filter(participant => {
         return participant.participantId <= 5;
     });
