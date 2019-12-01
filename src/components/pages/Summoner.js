@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import SummonerContext from '../../context/summoner/summonerContext';
 import SummonerItem from '../summoner/SummonerItem';
 import Spinner from '../layout/Spinner';
+import Error from '../layout/Error';
 import SearchBar from '../summoner/SearchBar';
 import Match from '../summoner/Match';
 
@@ -22,6 +23,13 @@ const Summoner = () => {
             <>
                 <SearchBar />
                 <Spinner />
+            </>
+        );
+    } else if (Object.keys(summonerDetails).length === 0) {
+        return (
+            <>
+                <SearchBar />
+                <Error />
             </>
         );
     } else {

@@ -22,8 +22,7 @@ export default (state, action) => {
         case SET_SUMMONER_MATCHES:
             return {
                 ...state,
-                summonerMatches: [...state.summonerMatches, action.payload],
-                loading: false
+                summonerMatches: [...state.summonerMatches, action.payload]
             };
         case SET_LOADING:
             return {
@@ -35,6 +34,7 @@ export default (state, action) => {
                 ...state,
                 summonerDetails: {},
                 summonerQueues: [],
+                summonerMatches: [],
                 loading: false
             };
 

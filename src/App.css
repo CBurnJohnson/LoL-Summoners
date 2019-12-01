@@ -45,6 +45,12 @@ body {
     border-bottom: 1px solid #000;
 }
 
+.error {
+    color: #d4af37;
+    font-size: 5rem;
+    margin-top: 2em;
+}
+
 .highlight {
     color: #d4af37;
 }

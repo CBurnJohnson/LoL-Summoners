@@ -79,6 +79,9 @@ const SummonerState = props => {
             }
         } catch (err) {
             console.log(err);
+            dispatch({
+                type: CLEAR_SUMMONER
+            });
         }
     };
 
