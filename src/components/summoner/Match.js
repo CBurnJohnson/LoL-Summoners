@@ -1,12 +1,56 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import SummonerContext from '../../context/summoner/summonerContext';
 
 const Match = props => {
     const {
         participantIdentities,
+        teams,
         gameType,
         gameMode,
         gameDuration
     } = props.match;
+
+    const summonerContext = useContext(SummonerContext);
+
+    const { summonerDetails } = summonerContext;
+
+    let currentParticipantId;
+
+    for (let i = 0; i < participantIdentities.length; i++) {
+        if (
+            participantIdentities[i].player.summonerName ===
+            summonerDetails.name
+        ) {
+            currentParticipantId = participantIdentities[i].participantId;
+        }
+    }
+
+    let playerTeamId;
+
+    if (currentParticipantId <= 5) {
+        playerTeamId = 100;
+    } else {
+        playerTeamId = 200;
+    }
+
+    let playerTeam;
+
+    for (let i = 0; i < teams.length; i++) {
+        if (playerTeamId === teams[i].teamId) {
+            playerTeam = teams[i];
+        }
+    }
+
+    // who won
+    let didWin;
+
+    if (playerTeam.win === 'Win') {
+        didWin = true;
+    } else {
+        didWin = false;
+    }
+
+    console.log(playerTeam);
 
     const leftTeam = participantIdentities.filter(participant => {
         return participant.participantId <= 5;
@@ -25,7 +69,7 @@ const Match = props => {
                     <div className='game-duration'>{gameDuration / 60}</div>
                 </div>
                 <div className='outcome'>
-                    <div>VICTORY</div>
+                    <div>{didWin ? 'Victory!' : 'Defeat!'} </div>
                 </div>
             </div>
             <div className='players'>
