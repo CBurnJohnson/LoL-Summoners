@@ -8,6 +8,8 @@ import Match from '../summoner/Match';
 const Summoner = () => {
     const summonerContext = useContext(SummonerContext);
 
+    const uuid4 = require('uuid4');
+
     const {
         summonerQueues,
         summonerDetails,
@@ -46,12 +48,12 @@ const Summoner = () => {
 
                 <div className='summoner-container'>
                     {summonerQueues.map(queue => (
-                        <SummonerItem key={queue.queueType} queue={queue} />
+                        <SummonerItem key={uuid4()} queue={queue} />
                     ))}
                 </div>
                 <div className='matches-container'>
                     {summonerMatches.map(match => (
-                        <Match key={match.gameId} match={match} />
+                        <Match key={uuid4()} match={match} />
                     ))}
                 </div>
             </>
