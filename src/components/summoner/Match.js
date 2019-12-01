@@ -69,8 +69,8 @@ const Match = props => {
         >
             <div className='match-info'>
                 <div className='info'>
-                    <div className='game-type'>{gameType}</div>
                     <div className='game-mode'>{gameMode}</div>
+                    <div className='game-type'>{gameType}</div>
                     <div className='game-duration'>
                         {parseFloat(gameDuration / 60).toFixed(2)} mins
                     </div>
