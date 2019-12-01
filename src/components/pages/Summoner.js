@@ -26,8 +26,14 @@ const Summoner = () => {
         return (
             <>
                 <SearchBar />
-                <div className='summoner-container'>
-                    <div className='summoner-details'>
+                <div className='summoner-details'>
+                    <div className='summoner-icon'>
+                        <img
+                            src={`http://avatar.leagueoflegends.com/na/${summonerDetails.name}.png`}
+                            alt=''
+                        />
+                    </div>
+                    <div className='summoner-info'>
                         <span className='summoner-name'>
                             {summonerDetails.name}
                         </span>{' '}
@@ -36,11 +42,14 @@ const Summoner = () => {
                             Level {summonerDetails.summonerLevel}
                         </span>
                     </div>
+                </div>
+                <h2 className='summoner-ranks'>Summoner Ranks</h2>
+                <div className='summoner-container'>
                     {summonerQueues.map(queue => (
                         <SummonerItem key={queue.queueType} queue={queue} />
                     ))}
                 </div>
-                <h1 className='match-history'>Match History</h1>
+                <h2 className='match-history'>Match History</h2>
                 <div className='matches-container'>
                     {summonerMatches.map(match => (
                         <Match key={match.gameId} match={match} />

@@ -97,7 +97,29 @@ body {
     Summoner Page
 ================================================================== */
 
+.container h2 {
+    font-size: 2em;
+}
+
 .summoner-container {
+    font-size: 1.25rem;
+    background: #eaeaea;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 1.5em;
+    margin: 1em auto;
+    width: 96%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-rows: 1fr;
+    grid-template-areas: 'solo flexQ threes tft';
+}
+
+.summoner-ranks {
+    color: #d4af37;
+}
+
+.summoner-details {
     background: #eaeaea;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 15px;
@@ -105,15 +127,19 @@ body {
     margin: 1em auto;
     width: 96%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-        'summonerDetails solo tft'
-        'summonerDetails flexQ threes ';
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    justify-items: left;
+    grid-gap: 1em;
 }
 
-.summoner-details {
-    justify-self: left;
+.summoner-icon {
+    justify-self: right;
+}
+
+.summoner-icon img {
+    height: 125px;
+    border-radius: 50%;
 }
 
 .summoner-name {
@@ -125,6 +151,7 @@ body {
     display: inline-block;
     margin-top: 8px;
     font-size: 1.5rem;
+    color: #8b8989;
 }
 
 .ranked_tft {
@@ -146,8 +173,8 @@ body {
 .queue-type {
     font-weight: bold;
     text-decoration: underline;
-    font-size: 1.5rem;
-    margin-bottom: 1em;
+    font-size: 1.75rem;
+    margin-bottom: 0.4em;
 }
 
 /* ===============================================
@@ -164,7 +191,7 @@ body {
     padding: 1em;
     margin: 1em auto;
     width: 96%;
-    height: 55%;
+    height: 44%;
     overflow: auto;
 }
 
