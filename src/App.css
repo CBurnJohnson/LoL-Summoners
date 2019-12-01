@@ -97,10 +97,6 @@ body {
     Summoner Page
 ================================================================== */
 
-.container h2 {
-    font-size: 2em;
-}
-
 .summoner-container {
     font-size: 1.25rem;
     background: #eaeaea;
@@ -113,10 +109,6 @@ body {
     grid-template-columns: repeat(4, minmax(100px, 1fr));
     grid-template-rows: 1fr;
     grid-template-areas: 'solo flexQ threes tft';
-}
-
-.summoner-ranks {
-    color: #d4af37;
 }
 
 .summoner-details {
@@ -191,7 +183,7 @@ body {
     padding: 1em;
     margin: 1em auto;
     width: 96%;
-    height: 44%;
+    height: 55%;
     overflow: auto;
 }
 
@@ -215,10 +207,6 @@ body {
 .players {
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-
-.match-history {
-    color: #d4af37;
 }
 
 .outcome {
