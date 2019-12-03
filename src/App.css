@@ -111,7 +111,7 @@ body {
     border-radius: 15px;
     padding: 1.5em;
     margin: 1em auto;
-    width: 96%;
+    width: 60%;
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
     grid-template-rows: 1fr;
@@ -124,16 +124,11 @@ body {
     border-radius: 15px;
     padding: 1em;
     margin: 1em auto;
-    width: 96%;
+    width: 40%;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 20% 80%;
     align-items: center;
-    justify-items: left;
-    grid-gap: 1em;
-}
-
-.summoner-icon {
-    justify-self: right;
+    word-wrap: break-word;
 }
 
 .summoner-icon img {
@@ -239,11 +234,20 @@ body {
     .summoner-details {
         grid-template-columns: 1fr;
         align-items: center;
-        justify-items: center;
+        justify-items: left;
+        word-wrap: break-word;
+    }
+
+    .summoner-name {
+        font-size: 2rem;
     }
 
     .summoner-icon {
         justify-self: center;
         align-self: center;
+    }
+
+    .summoner-icon img {
+        height: 100px;
     }
 }
