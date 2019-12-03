@@ -17,9 +17,6 @@ const SummonerItem = props => {
         case 'RANKED_FLEX_TT':
             queueName = 'Ranked 3v3';
             break;
-        case 'RANKED_TFT':
-            queueName = 'Ranked TFT';
-            break;
 
         default:
             break;

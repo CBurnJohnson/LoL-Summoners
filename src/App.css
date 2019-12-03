@@ -43,6 +43,7 @@ body {
     background: #003366;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .error {
@@ -112,9 +113,9 @@ body {
     margin: 1em auto;
     width: 96%;
     display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
     grid-template-rows: 1fr;
-    grid-template-areas: 'solo flexQ threes tft';
+    grid-template-areas: 'solo flexQ threes';
 }
 
 .summoner-details {
@@ -150,10 +151,6 @@ body {
     margin-top: 8px;
     font-size: 1.5rem;
     color: #8b8989;
-}
-
-.ranked_tft {
-    grid-area: tft;
 }
 
 .ranked_solo_5x5 {
@@ -236,8 +233,7 @@ body {
         grid-template-areas:
             'solo'
             'flexQ'
-            'threes'
-            'tft';
+            'threes';
     }
 
     .summoner-details {
