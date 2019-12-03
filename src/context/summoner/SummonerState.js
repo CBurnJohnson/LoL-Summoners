@@ -28,17 +28,17 @@ const SummonerState = props => {
         try {
             // Gets summonerId based on the username that is searched for
             const res = await axios.get(
-                `https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${inputValue}?api_key=${apiKey}`
+                `/tft/summoner/v1/summoners/by-name/${inputValue}?api_key=${apiKey}`
             );
 
             // Retrieves summoner Queue Data
             const resTwo = await axios.get(
-                `https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${res.data.id}?api_key=${apiKey}`
+                `/lol/league/v4/entries/by-summoner/${res.data.id}?api_key=${apiKey}`
             );
 
             // Retrieves summoner match history
             const resThree = await axios.get(
-                `https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${res.data.accountId}?endIndex=10&api_key=${apiKey}`
+                `/lol/match/v4/matchlists/by-account/${res.data.accountId}?endIndex=10&api_key=${apiKey}`
             );
 
             const { matches } = resThree.data;
@@ -59,7 +59,7 @@ const SummonerState = props => {
             // Retrieves the information about the past 10 games
             for (let i = 0; i < gameIds.length; i++) {
                 const res = await axios.get(
-                    `https://na1.api.riotgames.com/lol/match/v4/matches/${gameIds[i]}?api_key=${apiKey}`
+                    `/lol/match/v4/matches/${gameIds[i]}?api_key=${apiKey}`
                 );
                 dispatch({
                     type: SET_SUMMONER_MATCHES,
