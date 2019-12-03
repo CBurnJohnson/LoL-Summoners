@@ -2,7 +2,6 @@
     "name": "lol-profile-app",
     "version": "0.1.0",
     "private": true,
-    "proxy": "https://na1.api.riotgames.com",
     "engines": {
         "npm": "6.13.1",
         "node": "12.13.1"
