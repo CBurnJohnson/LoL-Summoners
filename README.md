@@ -2,8 +2,6 @@
 
 #### React Application using Riot's APIs to display searched summoner's league of legends data.
 
-##### Deployed Version: https://lolsummoners.netlify.com/
-
 ![homepage](https://user-images.githubusercontent.com/44681780/70089723-9c1f5700-15cd-11ea-9357-f03d77b4eaa1.png)
 
 ![summoner](https://user-images.githubusercontent.com/44681780/70089728-9e81b100-15cd-11ea-8fa4-c77e97beb621.jpg)
