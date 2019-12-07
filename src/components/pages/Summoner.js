@@ -39,7 +39,7 @@ const Summoner = () => {
                 <div className='summoner-details'>
                     <div className='summoner-icon'>
                         <img
-                            src={`http://avatar.leagueoflegends.com/na/${summonerDetails.name}.png`}
+                            src={`https://opgg-static.akamaized.net/images/profile_icons/profileIcon${summonerDetails.profileIconId}.jpg?image=q_auto&v=1518361200`}
                             alt=''
                         />
                     </div>
