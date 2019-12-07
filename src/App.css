@@ -109,9 +109,9 @@ body {
     background: #eaeaea;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 15px;
-    padding: 1.5em;
+    padding: 1em 0.5em;
     margin: 1em auto;
-    width: 60%;
+    width: 50%;
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
     grid-template-rows: 1fr;
